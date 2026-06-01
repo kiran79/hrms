@@ -217,14 +217,23 @@ export default function Home() {
             {footerText || `© ${companyName || "Bharat HRMS Payroll SaaS"}. All Rights Reserved.`}
           </span>
           <div className="flex gap-4">
-            {[["Register", "/register"], ["Login", "/login"], ["SaaS Admin", "/super-admin"]].map(([label, href]) => (
-              <Link key={label} href={href as string}
-                className="hover:underline transition"
-                style={{ color: footerLinkColor || primaryColor }}>
-                {label}
-              </Link>
-            ))}
-          </div>
+            {(
+               [
+                 ["Register", "/register"],
+                 ["Login", "/login"],
+                 ["SaaS Admin", "/super-admin"],
+               ] as const
+             ).map(([label, href]) => (
+            <Link
+            key={label}
+            href={href}
+            className="hover:underline transition"
+            style={{ color: footerLinkColor || primaryColor }}
+            >
+           {label}
+           </Link>
+          ))}
+</div>
         </div>
       </footer>
     </main>

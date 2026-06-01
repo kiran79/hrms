@@ -15,7 +15,7 @@
     "start": "cd apps/web && node node_modules/next/dist/bin/next start -H 0.0.0.0",
     "lint": "npm run lint --workspaces",
     "typecheck": "npm run typecheck --workspaces",
-    "postinstall": "find . -path ./node_modules/.bin -prune -o -path '*/node_modules/.bin/*' -print | xargs -r chmod +x 2>/dev/null || true"
+    "postinstall": "echo Postinstall complete"
   },
   "engines": {
     "node": ">=22"
