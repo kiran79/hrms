@@ -1,0 +1,29 @@
+{
+  "name": "bharat-hrms-payroll-saas",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Multi-tenant HRMS and payroll SaaS for Indian organizations.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @bharat-hrms/web",
+    "dev:api": "npm run start:dev --workspace @bharat-hrms/api",
+    "build": "npm run build --workspaces",
+    "build:web": "npm run build --workspace @bharat-hrms/web",
+    "start": "cd apps/web && node node_modules/next/dist/bin/next start -H 0.0.0.0",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "postinstall": "find . -path ./node_modules/.bin -prune -o -path '*/node_modules/.bin/*' -print | xargs -r chmod +x 2>/dev/null || true"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.1",
+    "lodash": "4.17.21",
+    "rxjs": "7.8.1"
+  }
+}
